@@ -1,0 +1,149 @@
+ /* cores */
+ :root {
+    --azul-neon: #00FFFF;
+    --azul-eletrico: #007BFF;
+    --roxo-neon: #9D00FF;
+    --violeta-intenso: #6D00FF;
+    --preto-futurista: #0A0A0A;
+    --laranja-queimado: #ff7300;
+    --creme: #f4a261;
+}
+/* style */
+body {
+    font-family: 'Orbitron', sans-serif; /* Fonte futurista */
+    background-color: #0a0a0a;
+    background: transparent;
+    color: #fff;
+    text-align: center;
+    
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--roxo-neon);
+    text-shadow: 0 0 10px var(--roxo-neon), 0 0 20px var(--violeta-intenso);
+}
+
+table {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.98);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+thead {
+    background-color: var(--violeta-intenso);
+}
+th, td {
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+th {
+    background: linear-gradient(90deg, var(--violeta-intenso), var(--roxo-neon));
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+            background: linear-gradient(135deg, #d1d1d1, #ffffff, #a8a8a8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+}
+
+td {
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+tr:hover td {
+    background: rgba(255, 255, 255, 0.3);
+}
+/* animacao */
+tr{ opacity: 1; transform: translateY(0); transition: all 0.3s;}
+tr.show { opacity: 1; transform: translateY(0); }
+tr.in{opacity: 0; transform: translateY(20px); }
+  
+.text-gradient::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 20%,
+      rgba(255, 255, 255, 0.1) 25%,
+      transparent 30%
+    );
+    animation: verticalWaves 6s infinite linear;
+  }
+  
+  @keyframes verticalWaves {
+    0% { left: -100%; }
+    100% { left: 0%; }
+  }
+  
+
+
+
+
+  .animated-table th {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .animated-table th::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: titleGlow 3s infinite linear;
+  }
+  
+  @keyframes titleGlow {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  .animated-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.98);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .animated-table::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    background: repeating-linear-gradient(
+      transparent 0%,
+      transparent 10%,
+      rgba(255, 255, 255, 0.05) 15%,
+      transparent 20%
+    );
+    animation: horizontalWaves 6s infinite linear;
+  }
+  
+  @keyframes horizontalWaves {
+    0% { top: -100%; }
+    100% { top: 0%; }
+  }
+  
+  
+  
